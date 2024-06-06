@@ -4,6 +4,7 @@ import { StyleSheet, View, FlatList, TouchableWithoutFeedback, Keyboard, Alert} 
 import Header from './src/components/header';
 import TodoItem from './src/components/todoItem';
 import AddTodo from './src/components/addTodo';
+import { Sandbox } from './src/components/sandbox';
 import {v4 as uuidv4} from 'uuid';
 
 export default function App() {
@@ -39,8 +40,9 @@ const submitHandler = (text) => {
 };
 
 return (
+  // <Sandbox />
   <TouchableWithoutFeedback
-     onPress={() => Keyboard.dismiss()}
+     onPress={() => Keyboard.dismiss}
      
      >
     <View style={styles.container}>
@@ -67,9 +69,12 @@ container: {
   backgroundColor: '#fff',
 },
 content: {
+  flex:1,
   padding: 40,
+
 },
 list: {
+  flex:1,
   marginTop: 20,
 },
 });
