@@ -26,15 +26,18 @@ export default function TodoItem({item, pressHandler}){
 const styles= StyleSheet.create({
     item: {
         flexDirection:'row',
+        justifyContent: 'space-between',
         padding:16,
         marginTop:16,
         borderColor: '#bbb',
         borderWidth:1,
         borderStyle:'dashed',
         borderRadius: 10,
+    
 
     },
     itemText: {
-        
+        color:'blue',
+        fontWeight: 'bolder',
     }
 })
