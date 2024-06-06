@@ -1,6 +1,6 @@
 
-import React,{useState, useEffect} from 'react';
-import { StyleSheet, View, FlatList, TouchableWithoutFeedback} from 'react-native';
+import React,{useState} from 'react';
+import { StyleSheet, View, FlatList, TouchableWithoutFeedback, Keyboard, Alert} from 'react-native';
 import Header from './src/components/header';
 import TodoItem from './src/components/todoItem';
 import AddTodo from './src/components/addTodo';
@@ -32,14 +32,17 @@ const submitHandler = (text) => {
       ];
     });
   } else {
-    Alert.alert('OOPS', 'Todo must be over 3 characters long', [
+      Alert.alert('Error','Todo must be over 3 characters long', [
       {text: 'Understood', onPress: () => console.log('alert closed') }
     ]);
   }
 };
 
 return (
-  <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+  <TouchableWithoutFeedback
+     onPress={() => Keyboard.dismiss()}
+     
+     >
     <View style={styles.container}>
       <Header />
       <View style={styles.content}>
