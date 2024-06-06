@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text,  Pressable,TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View,  Pressable,TouchableOpacity} from 'react-native';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
 
 export default function TodoItem({item, pressHandler}){
 
@@ -8,12 +10,22 @@ export default function TodoItem({item, pressHandler}){
             onPress={()=> pressHandler(item.key)}
         
         >
-            <Text style={styles.item}>{item.text}</Text>
+           
+            <View  style={styles.item}>
+                <Text style={styles.itemText}>{item.text}</Text>
+                <MaterialIcons 
+                    
+                    name="delete" 
+                    size={18} 
+                    color="red" />
+            </View>
+           
         </TouchableOpacity>
     )
 }
 const styles= StyleSheet.create({
     item: {
+        flexDirection:'row',
         padding:16,
         marginTop:16,
         borderColor: '#bbb',
@@ -21,5 +33,8 @@ const styles= StyleSheet.create({
         borderStyle:'dashed',
         borderRadius: 10,
 
+    },
+    itemText: {
+        
     }
 })
